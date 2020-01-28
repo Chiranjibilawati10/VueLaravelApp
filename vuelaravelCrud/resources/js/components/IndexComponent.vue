@@ -1,3 +1,4 @@
+
 <template>
   <div>
       <h1>Posts</h1>
@@ -38,7 +39,7 @@
         }
       },
       created() {
-      let uri = 'http://localhost:8000/api/posts';
+      let uri = 'api/posts';
       this.axios.get(uri).then(response => {
         this.posts = response.data.data;
       });
@@ -46,7 +47,7 @@
     methods: {
       deletePost(id)
       {
-        let uri = `http://vuelaravelcrud.test/api/post/delete/${id}`;
+        let uri = `api/post/delete/${id}`;
         this.axios.delete(uri).then(response => {
           this.posts.splice(this.posts.indexOf(id), 1);
         });

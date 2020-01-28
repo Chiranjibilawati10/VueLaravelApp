@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Resource\PostCollection;
+use App\Http\Resources\PostCollection;
 use App\Post;
 
 class PostController extends Controller
@@ -28,7 +28,6 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        
         return response()->json($post);
     }
 

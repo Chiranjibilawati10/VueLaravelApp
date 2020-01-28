@@ -43,9 +43,9 @@ Vue.component('app-component', require('./App.vue').default);
 //routes path
 const routes = [
     { path: '/', component: HomeComponent},
-    { path:'/create', component: CreateComponent},
-    { path:'/posts', component:IndexComponent},
-    { path:'/edit/:id', component:EditComponent}
+    { path:'/create', component: CreateComponent, name:'create'},
+    { path:'/posts', component:IndexComponent, name:'posts'},
+    { path:'/edit/:id', component:EditComponent, name:'edit'}
   ];
   
   // const router = new VueRouter({ mode: 'history', routes: routes});

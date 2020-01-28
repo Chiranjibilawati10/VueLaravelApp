@@ -1988,7 +1988,7 @@ __webpack_require__.r(__webpack_exports__);
     addPost: function addPost() {
       var _this = this;
 
-      var uri = 'http://localhost:8000/api/post/create';
+      var uri = 'api/post/create';
       this.axios.post(uri, this.post).then(function (response) {
         _this.$router.push({
           name: 'posts'
@@ -2045,7 +2045,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    var uri = "http://localhost:8000/api/post/edit/".concat(this.$route.params.id);
+    var uri = "../api/post/edit/".concat(this.$route.params.id);
     this.axios.get(uri).then(function (response) {
       _this.post = response.data;
     });
@@ -2054,7 +2054,7 @@ __webpack_require__.r(__webpack_exports__);
     updatePost: function updatePost() {
       var _this2 = this;
 
-      var uri = "http://localhost:8000/api/post/update/".concat(this.$route.params.id);
+      var uri = "../api/post/update/".concat(this.$route.params.id);
       this.axios.post(uri, this.post).then(function (response) {
         _this2.$router.push({
           name: 'posts'
@@ -2138,6 +2138,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2147,7 +2148,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    var uri = 'http://localhost:8000/api/posts';
+    var uri = 'api/posts';
     this.axios.get(uri).then(function (response) {
       _this.posts = response.data.data;
     });
@@ -2156,7 +2157,7 @@ __webpack_require__.r(__webpack_exports__);
     deletePost: function deletePost(id) {
       var _this2 = this;
 
-      var uri = "http://vuelaravelcrud.test/api/post/delete/".concat(id);
+      var uri = "api/post/delete/".concat(id);
       this.axios["delete"](uri).then(function (response) {
         _this2.posts.splice(_this2.posts.indexOf(id), 1);
       });
@@ -53865,13 +53866,16 @@ var routes = [{
   component: _components_HomeComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, {
   path: '/create',
-  component: _components_CreateComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+  component: _components_CreateComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+  name: 'create'
 }, {
   path: '/posts',
-  component: _components_IndexComponent_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+  component: _components_IndexComponent_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+  name: 'posts'
 }, {
   path: '/edit/:id',
-  component: _components_EditComponent_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+  component: _components_EditComponent_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+  name: 'edit'
 }]; // const router = new VueRouter({ mode: 'history', routes: routes});
 // const app = new Vue(Vue.util.extend({ router }, App)).$mount('#app');
 //creating new router and passing the routes
